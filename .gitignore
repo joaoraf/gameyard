@@ -3,3 +3,4 @@
 /.settings
 /.cache
 **/*.swp
+**/Session.vim
