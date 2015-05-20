@@ -13,12 +13,13 @@
 	sequence/4,
 	head/2,
 	fst/2,
-	snd/2
+	snd/2	
  ]).
 
-repl(X, N, L) :-
-    length(L, N),
-    maplist(=(X), L).
+filled(_,[]).
+filled(V,[V|XS]) :- filled(V,XS).
+
+repl(N,V,L) :- length(L,N), filled(V,L).
     
 split_(N,L,AC,AC,L) :- N =< 0, !.
 split_(_N,[],AC,AC,[]) :- !.
@@ -76,7 +77,7 @@ list_map_filter(F,List,OutList) :-
 
 range(From,Until,Range) :-
 	Until1 is Until - 1,
-	aggregate_all(list(X),between(From,Until1,X),Range).
+	aggregate_all(bag(X),between(From,Until1,X),Range).
 
 :- meta_predicate for_range(?,?,2,?).
 
@@ -89,4 +90,6 @@ sequence(_,_,Count,[]) :- Count =< 0, !.
 sequence(Start,Step,Count,[Start|XS]) :-
 	Next is Start + Step,
 	Count1 is Count - 1,
-	sequence(Next,Step,Count1,XS). 	
+	sequence(Next,Step,Count1,XS).
+
+	 	

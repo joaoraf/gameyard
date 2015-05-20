@@ -10,7 +10,7 @@
     state_space_view_transitions/3,
     state_space_transitions/3,
     state_space_state_render/3,
-    state_space_view_render/3        
+    state_space_view_render/3           
   ]).
 
 game_state_space(SS) :-
