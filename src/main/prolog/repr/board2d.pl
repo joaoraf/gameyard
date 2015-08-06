@@ -23,10 +23,10 @@
         board2d_diameter/3,
         board2d_rows/2	
   ]).
-
+:- use_module('../gameyard_config').
 :- use_module(library(clpfd)).
-:- use_module(ugraphs_ext, [shortest_path/4]).
-:- use_module(list_extras).
+:- use_module(gameyard(misc/ugraphs_ext), [shortest_path/4]).
+:- use_module(gameyard(misc/list_extras)).
 
   
 board2d_new(Width,Height,InitialValue,Wt,Board) :-

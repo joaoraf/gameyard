@@ -1,12 +1,13 @@
 :- module(swish_render_gatherer_state_space,
 	[ term_rendering//3
 	]).
-	
+
+:- use_module('../../gameyard_config').	
 :- use_module(library(http/html_write)).
-:- use_module('/home/joao/workspace_old/pengines/apps/swish/lib/render').
+:- use_module(swish(lib/render)).
 :- use_module(gatherer_state_space).
-:- use_module('../../list_extras').
-:- use_module('../../board2d').
+:- use_module(gameyard(misc/list_extras)).
+:- use_module(gameyard(repr/board2d)).
 
 :- register_renderer(gatherer,"Render gatherer board representations.").  
 

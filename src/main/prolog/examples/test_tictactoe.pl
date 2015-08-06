@@ -1,13 +1,20 @@
+:- use_module('../gameyard_config').
+:- use_module(gameyard('game_types/tictactoe/tictactoe_state_space')).
+:- use_module(gameyard('misc/list_extras')).
+
 :- dynamic(tictactoe_state/1).
 :- dynamic(tictactoe_state_space/1).
 
-:-  tictactoe_game_state_space(SS),
+init_state :-
+    tictactoe_game_state_space(SS),
     state_space_param_create(SS,_{size:4},Params),
     state_space_initial_state(SS,Params,State0),
     assertz(tictactoe_state_space(SS)),
     assertz(tictactoe_state(State0)),
     write(State0),
     set_random(seed(1)).
+
+:- init_state.
 
 test(Move,State) :-
     tictactoe_state_space(SS),

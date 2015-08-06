@@ -5,8 +5,9 @@
 :- use_module(library(aggregate)).
 :- use_module(library(clpfd)).
 
-:- use_module('../../game_state_space').
-:- use_module('../../list_extras').
+:- use_module('../../gameyard_config').
+:- use_module(gameyard(game_state_space)).
+:- use_module(gameyard(misc/list_extras)).
 
 domino_game_state_space(GS) :-
   default_game_state_space(GS1),

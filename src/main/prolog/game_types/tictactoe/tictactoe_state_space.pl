@@ -2,8 +2,10 @@
 	tictactoe_game_state_space/1
   ]).
 
-:- use_module('../../game_state_space').
-:- use_module('../../list_extras').
+:- use_module('../../gameyard_config').
+:- use_module(gameyard(game_state_space)).
+:- use_module(gameyard(misc/list_extras)).
+:- use_module(swish_render_tictactoe).
 
 tictactoe_game_state_space(GS) :-
   default_game_state_space(GS1), 
@@ -93,7 +95,7 @@ state_cell_change(State,Pos,Value, NewState) :-
 	format("state_cell_change: NewCells=~k.\n",[NewCells]),
 	state_cells_change(State,NewCells,NewState).
 
-fresh_state(Size,tictactoe_state{size: Size, cells : Cells}) :- S is Size*Size, repl(empty,S,Cells).
+fresh_state(Size,tictactoe_state{size: Size, cells : Cells}) :- S is Size*Size, repl(S,empty,Cells).
 	
 map_positions(_, [], []) :- !.
 map_positions(Size, [P | PS], [pos(Y,X) | XS]) :-

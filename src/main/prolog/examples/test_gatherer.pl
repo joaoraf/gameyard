@@ -1,5 +1,6 @@
-:- use_module('/home/joao/workspace_old/gameyard/src/main/prolog/game_types/gatherer/gatherer_state_space').
-:- use_module('/home/joao/workspace_old/gameyard/src/main/prolog/board2d').
+:- use_module('../gameyard_config').
+:- use_module(gameyard('game_types/gatherer/gatherer_state_space')).
+:- use_module(gameyard('repr/board2d')).
 
 :- use_rendering(gatherer).
 

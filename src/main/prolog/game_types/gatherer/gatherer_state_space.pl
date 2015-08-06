@@ -8,11 +8,12 @@
 	render_state_space/2
   ]).
 
+:- use_module('../../gameyard_config').
 :- use_module(library(assoc)).
 :- use_module(library(random)).
-:- use_module('../../game_state_space').
-:- use_module('../../list_extras').
-:- use_module('../../board2d').
+:- use_module(gameyard(game_state_space)).
+:- use_module(gameyard(misc/list_extras)).
+:- use_module(gameyard(repr/board2d)).
 :- use_module(swish_render_gatherer_state_space,[]).
 
 gatherer_game_state_space(GS) :-
